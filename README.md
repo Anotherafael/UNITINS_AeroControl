@@ -1,6 +1,6 @@
-# infraero_app
+# AeroControl App
 
-A new Flutter project.
+This is a project developed for my university, UNITINS. It´s a simple application for search of flights and airports in Brazil. I would've used an API, but all the apis that I've known aren't free anymore.
 
 ## Getting Started
 
