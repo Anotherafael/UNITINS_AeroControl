@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:infraero_app/app/presentation/modules/airport_list/airport_list.dart';
 
 import '../../modules/home/home_page.dart';
 import '../../modules/splash/splash_page.dart';
@@ -14,6 +15,10 @@ class AppRoutes {
         GetPage(
           name: '/home',
           page: () => const HomePage(),
+        ),
+        GetPage(
+          name: '/airport_list',
+          page: () => const AirportListPage(),
         ),
       ];
 }
