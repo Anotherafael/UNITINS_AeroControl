@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:infraero_app/app/presentation/shared/theme/app_colors.dart';
-import 'package:infraero_app/app/presentation/shared/theme/app_fonts.dart';
 import 'package:infraero_app/app/presentation/shared/theme/app_theme.dart';
 import 'package:infraero_app/app/presentation/shared/widgets/custom_appbar.dart';
 import 'package:infraero_app/app/presentation/shared/widgets/custom_button.dart';

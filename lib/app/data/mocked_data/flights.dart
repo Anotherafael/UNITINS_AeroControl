@@ -1,6 +1,6 @@
 import '../models/company_model.dart';
 
-final mock_flights = [
+final mockFlights = [
   {
     "id": 1,
     "company": Company(id: 1, name: 'Gol'),

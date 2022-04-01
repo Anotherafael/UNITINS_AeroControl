@@ -1,4 +1,4 @@
-final mock_companies = [
+final mockCompanies = [
   {
     "id": 1,
     "name": "Gol",

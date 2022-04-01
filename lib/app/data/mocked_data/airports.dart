@@ -1,4 +1,4 @@
-final mock_airports = [
+final mockAirports = [
   {
     "id": 1,
     "iata": "PMW",

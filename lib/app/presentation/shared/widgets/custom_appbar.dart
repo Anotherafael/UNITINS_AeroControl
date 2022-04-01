@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:infraero_app/app/presentation/shared/theme/app_colors.dart';
 import 'package:lottie/lottie.dart';
 
 // ignore: must_be_immutable
