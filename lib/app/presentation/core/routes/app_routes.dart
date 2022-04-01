@@ -18,7 +18,7 @@ class AppRoutes {
         ),
         GetPage(
           name: '/airport_list',
-          page: () => const AirportListPage(),
+          page: () => AirportListPage(),
         ),
       ];
 }

@@ -5,6 +5,7 @@ class AppColors {
   static Color darkgreen = const Color(0xFF025939);
   static Color darkgreenAlt = const Color(0xFF027333);
   static Color green = const Color(0xFF04D939);
+  static Color green50 = green.withOpacity(0.3);
   static Color greenAlt = const Color(0xFF03A63C);
   static Color yellow = const Color(0xFFCBE23F);
   static Color white = const Color(0xFFEBEDF2);
@@ -13,7 +14,7 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: <Color>[
-      AppColors.green,
+      AppColors.darkgreen,
       AppColors.darkgreenAlt,
     ],
   );

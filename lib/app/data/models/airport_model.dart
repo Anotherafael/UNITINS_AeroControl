@@ -1,18 +1,19 @@
+import '../../domain/entities/airport_entity.dart';
 import 'flight_model.dart';
 
 class Airport {
-  final int? id;
-  final String? iata;
-  final String? name;
-  final String? location;
+  final int id;
+  final String iata;
+  final String name;
+  final String location;
   final List<Flight>? flights;
 
   Airport({
-    this.id,
-    this.iata,
+    required this.id,
+    required this.iata,
     this.flights,
-    this.name,
-    this.location,
+    required this.name,
+    required this.location,
   });
 
   Map<String, dynamic> toMap() {
@@ -33,6 +34,22 @@ class Airport {
       location: map['location'],
     );
   }
+
+  factory Airport.fromEntity(AirportEntity entity) {
+    return Airport(
+      id: entity.id,
+      name: entity.name,
+      iata: entity.iata,
+      location: entity.location,
+    );
+  }
+
+  AirportEntity toEntity() => AirportEntity(
+        id: id,
+        name: name,
+        iata: iata,
+        location: location,
+      );
 
   @override
   String toString() {
