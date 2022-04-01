@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_fonts.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.text}) : super(key: key);
+  const CustomButton({Key? key, required this.text, required this.toPage}) : super(key: key);
 
   final String text;
+  final String toPage;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,9 @@ class CustomButton extends StatelessWidget {
           ),
           primary: AppColors.darkgreenAlt,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed('/'+toPage);
+        },
         child: Text(
           text,
           style: AppFonts.buttonText,

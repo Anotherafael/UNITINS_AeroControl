@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:infraero_app/app/presentation/shared/theme/app_fonts.dart';
+import '../theme/app_fonts.dart';
 
 class CustomFooter extends StatelessWidget {
   const CustomFooter({Key? key, this.text}) : super(key: key);

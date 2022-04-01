@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:infraero_app/app/presentation/shared/theme/app_fonts.dart';
 import 'package:infraero_app/app/presentation/shared/theme/app_theme.dart';
+=======
+import '../../shared/theme/app_colors.dart';
+import '../../shared/theme/app_fonts.dart';
+import '../../shared/theme/app_theme.dart';
+>>>>>>> 584358c8dd4ce7f998a3dab83fe116dfe6270f6f
 import 'package:lottie/lottie.dart';
 
 class SplashPage extends StatefulWidget {
