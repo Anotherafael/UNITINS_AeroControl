@@ -1,8 +1,8 @@
-class Company {
+class CompanyModel {
   final int? id;
   final String? name;
 
-  Company({
+  CompanyModel({
     this.id,
     this.name,
   });
@@ -14,8 +14,8 @@ class Company {
     };
   }
 
-  factory Company.fromMap(Map<String, dynamic> map) {
-    return Company(
+  factory CompanyModel.fromMap(Map<String, dynamic> map) {
+    return CompanyModel(
       id: map['id'],
       name: map['name'],
     );

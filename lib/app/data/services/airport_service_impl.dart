@@ -17,7 +17,7 @@ class AirportServiceImpl implements AirportService {
       final List<AirportEntity> airportList = [];
 
       for (var airport in mockAirports) {
-        airportList.add(Airport.fromMap(airport).toEntity());
+        airportList.add(AirportModel.fromMap(airport).toEntity());
       }
 
       return right(airportList);

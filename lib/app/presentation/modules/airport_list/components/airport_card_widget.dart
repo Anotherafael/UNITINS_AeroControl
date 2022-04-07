@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../shared/theme/app_colors.dart';
 import '../../../shared/theme/app_fonts.dart';
 import '../controller/airport_list_controller.dart';
 
-class CardItem extends StatelessWidget {
-  const CardItem({
+class AirportCardWidget extends HookWidget {
+  const AirportCardWidget({
     Key? key,
     required this.airportController,
     required this.index,
@@ -24,7 +25,7 @@ class CardItem extends StatelessWidget {
             SizedBox(
               width: 40,
               child: Text(
-                airportController.airportList[index].iata,
+                airportController.filteredList[index].iata,
                 style: AppFonts.cardTitleIATAText,
               ),
             ),
@@ -34,7 +35,7 @@ class CardItem extends StatelessWidget {
             ),
             Flexible(
               child: Text(
-                airportController.airportList[index].name,
+                airportController.filteredList[index].name,
                 overflow: TextOverflow.ellipsis,
                 style: AppFonts.cardTitleText,
               ),

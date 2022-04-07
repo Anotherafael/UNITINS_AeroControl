@@ -1,14 +1,14 @@
 import '../../domain/entities/airport_entity.dart';
 import 'flight_model.dart';
 
-class Airport {
+class AirportModel {
   final int id;
   final String iata;
   final String name;
   final String location;
-  final List<Flight>? flights;
+  final List<FlightModel>? flights;
 
-  Airport({
+  AirportModel({
     required this.id,
     required this.iata,
     this.flights,
@@ -26,8 +26,8 @@ class Airport {
     };
   }
 
-  factory Airport.fromMap(Map<String, dynamic> map) {
-    return Airport(
+  factory AirportModel.fromMap(Map<String, dynamic> map) {
+    return AirportModel(
       id: map['id'],
       iata: map['iata'],
       name: map['name'],
@@ -35,8 +35,8 @@ class Airport {
     );
   }
 
-  factory Airport.fromEntity(AirportEntity entity) {
-    return Airport(
+  factory AirportModel.fromEntity(AirportEntity entity) {
+    return AirportModel(
       id: entity.id,
       name: entity.name,
       iata: entity.iata,

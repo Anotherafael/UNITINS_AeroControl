@@ -1,16 +1,16 @@
 import 'company_model.dart';
 
-class Flight {
+class FlightModel {
   final int? id;
   final int? code;
-  final Company? company;
+  final CompanyModel? company;
   final String? fromCity;
   final String? toCity;
   final DateTime? startAt;
   final DateTime? endAt;
   final String? situation;
 
-  Flight({
+  FlightModel({
     this.id,
     this.code,
     this.startAt,
@@ -32,8 +32,8 @@ class Flight {
     };
   }
 
-  factory Flight.fromMap(Map<String, dynamic> map) {
-    return Flight(
+  factory FlightModel.fromMap(Map<String, dynamic> map) {
+    return FlightModel(
       id: map['id'],
       startAt: DateTime.parse(map['start_at']),
       endAt: DateTime.parse(map['end_at']),

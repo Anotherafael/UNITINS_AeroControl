@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
-import 'package:infraero_app/app/presentation/modules/airport_list/components/card_item.dart';
+import 'package:infraero_app/app/presentation/modules/airport_list/components/airport_card_widget.dart';
 import 'package:infraero_app/app/presentation/shared/theme/app_colors.dart';
-import 'package:infraero_app/app/presentation/shared/theme/app_fonts.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../domain/entities/airport_entity.dart';
 import '../controller/airport_list_controller.dart';
 
 class AirportListWidget extends HookWidget {
@@ -15,6 +15,7 @@ class AirportListWidget extends HookWidget {
       : super(key: key);
 
   final AirportListController airportController;
+  // final ValueNotifier<List<AirportEntity>> list;
   final GlobalKey<AnimatedListState> listKey;
 
   Future<void> _loadItems() async {
@@ -55,9 +56,6 @@ class AirportListWidget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    useEffect(() {
-      _loadItems();
-    }, const []);
     return Obx(
       () => LazyLoadScrollView(
         onEndOfPage: () => _loadAnotherPage,
@@ -85,15 +83,15 @@ class AirportListWidget extends HookWidget {
                         ),
                         child: Container(
                           color: (index % 2 == 0)
-                              ? AppColors.darkgreenAlt
-                              : AppColors.darkgreen,
+                              ? AppColors.darkblue30
+                              : Colors.transparent,
                           padding: const EdgeInsets.symmetric(
                             vertical: 16,
                             horizontal: 8,
                           ),
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: CardItem(
+                            child: AirportCardWidget(
                               airportController: airportController,
                               index: index,
                             ),

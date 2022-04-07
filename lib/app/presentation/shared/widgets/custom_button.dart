@@ -5,7 +5,8 @@ import '../theme/app_colors.dart';
 import '../theme/app_fonts.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.text, required this.toPage}) : super(key: key);
+  const CustomButton({Key? key, required this.text, required this.toPage})
+      : super(key: key);
 
   final String text;
   final String toPage;
@@ -21,10 +22,10 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          primary: AppColors.darkgreenAlt,
+          primary: AppColors.diamond,
         ),
         onPressed: () {
-          Get.toNamed('/'+toPage);
+          Get.toNamed('/' + toPage);
         },
         child: Text(
           text,
