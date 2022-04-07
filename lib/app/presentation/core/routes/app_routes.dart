@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import '../../modules/airport_list/airport_list.dart';
+import '../../modules/airport_list/airport_list_page.dart';
+import '../../modules/flight_list/flight_list_page.dart';
 import '../../modules/home/home_page.dart';
 import '../../modules/splash/splash_page.dart';
 
@@ -18,6 +19,10 @@ class AppRoutes {
         GetPage(
           name: '/airport_list',
           page: () => AirportListPage(),
+        ),
+        GetPage(
+          name: '/flight_list',
+          page: () => FlightListPage(),
         ),
       ];
 }

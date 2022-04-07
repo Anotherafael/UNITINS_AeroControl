@@ -10,13 +10,11 @@ class SearchWidget extends HookWidget {
   final ValueNotifier<List<AirportEntity>> airportList;
   final AirportListController airportController;
 
-  SearchWidget({
+  const SearchWidget({
     Key? key,
     required this.airportList,
     required this.airportController,
   }) : super(key: key);
-
-  final searchController = TextEditingController();
 
   void filterSearchResults(String query) {
     airportList.value = airportController.airportList.where((airport) {
@@ -40,7 +38,6 @@ class SearchWidget extends HookWidget {
         onChanged: (value) {
           filterSearchResults(value);
         },
-        controller: searchController,
         style: AppFonts.searchHintText,
         cursorHeight: 24,
         decoration: InputDecoration(

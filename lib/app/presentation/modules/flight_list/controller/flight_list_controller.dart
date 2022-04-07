@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../domain/entities/airport_entity.dart';
-import '../../../../domain/services/airport_service.dart';
+import '../../../../domain/entities/flight_entity.dart';
+import '../../../../domain/services/flight_service.dart';
 
-class AirportListController extends GetxController {
-  final AirportService repository;
-  final airportList = <AirportEntity>[].obs;
+class FlightListController extends GetxController {
+  final FlightService repository;
+  final flightList = <FlightEntity>[].obs;
 
-  AirportListController({
+  FlightListController({
     required this.repository,
   });
 
-  Future<void> fetchAirports({
+  Future<void> fetchFlights({
     GlobalKey<AnimatedListState>? listKey,
   }) async {
-    final result = await repository.fetchAirports();
+    final result = await repository.fetchFlights();
     result.fold(
       (failure) {
         Get.defaultDialog(
             title: 'Error no Servidor',
             middleText: 'Um erro na API aconteceu.');
       },
-      (airportApiList) {
-        for (var i = 0; i < airportApiList.length; i++) {
-          airportList.add(airportApiList[i]);
+      (flightApiList) {
+        for (var i = 0; i < flightApiList.length; i++) {
+          flightList.add(flightApiList[i]);
 
           if (listKey != null) {
             listKey.currentState!.insertItem(
-              airportList.length - 1,
+              flightList.length - 1,
               duration: const Duration(milliseconds: 700),
             );
           }

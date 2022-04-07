@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
               // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
                 const CustomButton(
-                    text: "Search Flights", toPage: "airport_list"),
+                    text: "Search Flights", toPage: "flight_list"),
                 const CustomButton(
                     text: "Search Airports", toPage: "airport_list"),
               ],

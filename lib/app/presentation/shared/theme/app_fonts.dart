@@ -35,4 +35,16 @@ class AppFonts {
     color: AppColors.white,
     letterSpacing: 1.1,
   );
+
+  static final TextStyle flightCardTitleText = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColors.white,
+  );
+
+  static final TextStyle flightCardDateText = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.normal,
+    color: AppColors.white,
+  );
 }

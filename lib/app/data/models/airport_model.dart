@@ -1,17 +1,14 @@
 import '../../domain/entities/airport_entity.dart';
-import 'flight_model.dart';
 
 class AirportModel {
   final int id;
   final String iata;
   final String name;
   final String location;
-  final List<FlightModel>? flights;
 
   AirportModel({
     required this.id,
     required this.iata,
-    this.flights,
     required this.name,
     required this.location,
   });
@@ -21,7 +18,6 @@ class AirportModel {
       'id': id,
       'iata': iata,
       'name': name,
-      'flights': flights,
       'location': location,
     };
   }

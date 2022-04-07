@@ -9,8 +9,7 @@ import '../models/airport_model.dart';
 
 class AirportServiceImpl implements AirportService {
   @override
-  Future<Either<ServerFailure, List<AirportEntity>>> fetchAirports(
-      int initial, int airports) async {
+  Future<Either<ServerFailure, List<AirportEntity>>> fetchAirports() async {
     try {
       final List<AirportEntity> airportList = [];
 

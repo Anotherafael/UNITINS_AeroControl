@@ -1,10 +1,12 @@
+import '../../domain/entities/company_entity.dart';
+
 class CompanyModel {
-  final int? id;
-  final String? name;
+  final int id;
+  final String name;
 
   CompanyModel({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
   });
 
   Map<String, dynamic> toMap() {
@@ -20,6 +22,18 @@ class CompanyModel {
       name: map['name'],
     );
   }
+
+  factory CompanyModel.fromEntity(CompanyEntity entity) {
+    return CompanyModel(
+      id: entity.id,
+      name: entity.name,
+    );
+  }
+
+  CompanyEntity toEntity() => CompanyEntity(
+        id: id,
+        name: name,
+      );
 
   @override
   String toString() {
