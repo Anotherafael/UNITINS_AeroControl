@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import '../../../../domain/entities/airport_entity.dart';
 import '../../../shared/theme/app_colors.dart';
 import '../../../shared/theme/app_fonts.dart';
-import '../controller/airport_list_controller.dart';
 
 class AirportCardWidget extends HookWidget {
+  final AirportEntity airport;
   const AirportCardWidget({
     Key? key,
-    required this.airportController,
-    required this.index,
+    required this.airport,
   }) : super(key: key);
-
-  final AirportListController airportController;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +22,7 @@ class AirportCardWidget extends HookWidget {
             SizedBox(
               width: 40,
               child: Text(
-                airportController.filteredList[index].iata,
+                airport.iata,
                 style: AppFonts.cardTitleIATAText,
               ),
             ),
@@ -35,7 +32,7 @@ class AirportCardWidget extends HookWidget {
             ),
             Flexible(
               child: Text(
-                airportController.filteredList[index].name,
+                airport.name,
                 overflow: TextOverflow.ellipsis,
                 style: AppFonts.cardTitleText,
               ),

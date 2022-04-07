@@ -7,7 +7,6 @@ import '../../../../domain/services/airport_service.dart';
 class AirportListController extends GetxController {
   final AirportService repository;
   final airportList = <AirportEntity>[].obs;
-  late RxList<AirportEntity> filteredList = <AirportEntity>[].obs;
   final initialLoading = true.obs;
   final pageLoading = false.obs;
   final initial = 1.obs;
@@ -30,7 +29,6 @@ class AirportListController extends GetxController {
       (airportApiList) {
         for (var i = 0; i < airportApiList.length; i++) {
           airportList.add(airportApiList[i]);
-          filteredList.add(airportApiList[i]);
 
           if (listKey != null) {
             listKey.currentState!.insertItem(
@@ -41,16 +39,5 @@ class AirportListController extends GetxController {
         }
       },
     );
-  }
-
-  void searchController(String search) {
-    for (var airport in airportList) {
-      if (search.isEmpty) {
-        filteredList = airportList;
-      }
-      if (search.toLowerCase() != airport.iata.toLowerCase()) {
-        filteredList.remove(airport);
-      }
-    }
   }
 }

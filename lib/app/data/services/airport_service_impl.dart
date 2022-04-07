@@ -1,12 +1,10 @@
-import 'package:dio/dio.dart';
-import 'package:infraero_app/app/data/mocked_data/airports.dart';
-import 'package:infraero_app/app/domain/entities/airport_entity.dart';
-
-import 'package:infraero_app/app/domain/core/failures/server_failures.dart';
-
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
+import '../../domain/core/failures/server_failures.dart';
+import '../../domain/entities/airport_entity.dart';
 import '../../domain/services/airport_service.dart';
+import '../mocked_data/airports.dart';
 import '../models/airport_model.dart';
 
 class AirportServiceImpl implements AirportService {

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import '../theme/app_fonts.dart';
 
 class CustomFooter extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-import 'package:infraero_app/app/presentation/modules/airport_list/airport_list.dart';
-
+import '../../modules/airport_list/airport_list.dart';
 import '../../modules/home/home_page.dart';
 import '../../modules/splash/splash_page.dart';
 
