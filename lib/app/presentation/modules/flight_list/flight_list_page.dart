@@ -7,6 +7,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 
 import '../../../domain/entities/flight_entity.dart';
+import '../../shared/theme/app_colors.dart';
+import '../../shared/theme/app_fonts.dart';
 import '../../shared/theme/app_theme.dart';
 import 'widgets/flight_list_widget.dart';
 
@@ -14,6 +16,7 @@ class FlightListPage extends HookWidget {
   final flightController = FlightListController(
     repository: Get.find<FlightServiceImpl>(),
   );
+  final flight = ValueNotifier(FlightEntity);
 
   FlightListPage({Key? key}) : super(key: key);
 
@@ -42,6 +45,30 @@ class FlightListPage extends HookWidget {
         body: Center(
           child: Column(
             children: [
+              Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 24,
+                    horizontal: 16,
+                  ),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: ValueListenableBuilder(
+                    valueListenable: flight,
+                    builder: (BuildContext context, value, Widget? child) {
+                      return DropdownButton<FlightEntity>(
+                        hint: const Text('Select Airport'),
+                        onChanged: (selectedItem) =>
+                            flight.value = selectedItem as Type,
+                        items: flightList.value
+                            .map(
+                              (op) => DropdownMenuItem(
+                                value: op,
+                                child: Text(op.fromCity),
+                              ),
+                            )
+                            .toList(),
+                      );
+                    },
+                  )),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(24, 32, 24, 0),
