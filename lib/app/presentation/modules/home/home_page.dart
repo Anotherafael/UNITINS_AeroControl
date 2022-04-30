@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import '../../shared/theme/app_theme.dart';
 import '../../shared/widgets/custom_appbar.dart';
 import '../../shared/widgets/custom_button.dart';
@@ -19,10 +20,12 @@ class HomePage extends StatelessWidget {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
-                const CustomButton(
-                    text: "Search Flights", toPage: "flight_list"),
-                const CustomButton(
-                    text: "Search Airports", toPage: "airport_list"),
+                CustomButton(
+                    text: "Search Flights",
+                    onTap: () => Get.toNamed("flight_list")),
+                CustomButton(
+                    text: "Search Airports",
+                    onTap: () => Get.toNamed("airport_list")),
               ],
             ),
           ),
